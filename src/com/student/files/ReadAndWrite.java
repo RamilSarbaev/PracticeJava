@@ -7,7 +7,10 @@ import java.nio.file.Paths;
 
 public class ReadAndWrite {
 
-    private static void modifyText(Path source, Path dest) throws IOException {
+    public static final String FILE_NAME1 = "test1.txt";
+    public static final String FILE_NAME2 = "test2.txt";
+
+    private void modifyText(Path source, Path dest) throws IOException {
         byte[] bytes = Files.readAllBytes(source);
 
         String text = new String(bytes);
@@ -17,11 +20,13 @@ public class ReadAndWrite {
     }
 
     public static void main(String[] args) {
-        Path source = Paths.get("test1.txt");
-        Path destination = Paths.get("test2.txt");
+        Path source = Paths.get(FILE_NAME1);
+        Path destination = Paths.get(FILE_NAME2);
+
+        ReadAndWrite obj = new ReadAndWrite();
 
         try {
-            modifyText(source, destination);
+            obj.modifyText(source, destination);
         } catch (IOException ex) {
             System.out.println("Error! " + ex);
         }

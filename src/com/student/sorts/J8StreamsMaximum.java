@@ -13,8 +13,9 @@ public class J8StreamsMaximum {
 
         Optional<Integer> max = intStream.max(Integer::compare);
 
-        if (max.isPresent())
+        if (max.isPresent()) {
             return max.get();
+        }
 
         return 0;
     }

@@ -20,8 +20,9 @@ public class ArraysSort {
                 }
             }
 
-            if (!isSwapped)
+            if (!isSwapped) {
                 break;
+            }
         }
 
         return arr;

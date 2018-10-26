@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class LinkedListStore {
 
+    public static final String FILE_NAME = "test.txt";
+
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
 
         try {
-            Scanner in = new Scanner(new File("test.txt"));
+            Scanner in = new Scanner(new File(FILE_NAME));
 
             while (in.hasNext()) {
                 list.add(in.nextLine());
@@ -20,7 +22,8 @@ public class LinkedListStore {
             System.out.println("Error! " + ex);
         }
 
-        while (list.size() != 0)
+        while (list.size() != 0) {
             System.out.println(list.removeLast());
+        }
     }
 }

@@ -7,20 +7,21 @@ public class TwoArraysCompare {
     }
 
     public static void main(String[] args) {
-        TwoArraysCompare obj = new TwoArraysCompare();
-
         int[] first = {10, 5, 2, 3, 1};
         int[] second = {2, 12, 7, 8};
 
+        TwoArraysCompare obj = new TwoArraysCompare();
         int result = obj.compareArrays(first, second);
+
         String output;
 
-        if (result == -1)
+        if (result == -1) {
             output = "first array shorter than the second one";
-        else if (result == 1)
+        } else if (result == 1) {
             output = "first array longer than the second one";
-        else
+        } else {
             output = "Arrays are equals";
+        }
 
         System.out.println(output);
     }

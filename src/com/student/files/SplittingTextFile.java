@@ -8,7 +8,11 @@ import java.nio.file.Paths;
 
 public class SplittingTextFile {
 
-    private static void splitTextFile(Path source, Path destFor30, Path destFor70) throws IOException {
+    public static final String FILE_SOURCE_NAME = "test1.txt";
+    public static final String FILE_DESTINATION1_NAME = "test2.txt";
+    public static final String FILE_DESTINATION2_NAME = "test3.txt";
+
+    private void splitTextFile(Path source, Path destFor30, Path destFor70) throws IOException {
         byte[] bytes = Files.readAllBytes(source);
         String text = new String(bytes);
 
@@ -22,12 +26,14 @@ public class SplittingTextFile {
     }
 
     public static void main(String[] args) {
-        Path source = Paths.get("test1.txt");
-        Path destFor30 = Paths.get("test2.txt");
-        Path destFor70 = Paths.get("test3.txt");
+        Path source = Paths.get(FILE_SOURCE_NAME);
+        Path destFor30 = Paths.get(FILE_DESTINATION1_NAME);
+        Path destFor70 = Paths.get(FILE_DESTINATION2_NAME);
+
+        SplittingTextFile obj = new SplittingTextFile();
 
         try {
-            splitTextFile(source, destFor30, destFor70);
+            obj.splitTextFile(source, destFor30, destFor70);
         } catch (IOException ex) {
             System.out.println("Error! " + ex);
         }

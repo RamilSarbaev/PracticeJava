@@ -12,8 +12,9 @@ public class J8StreamsAverage {
         IntStream intStream = Arrays.stream(arr);
         OptionalDouble average = intStream.average();
 
-        if (average.isPresent())
+        if (average.isPresent()) {
             return (int) average.getAsDouble();
+        }
 
         return 0;
     }

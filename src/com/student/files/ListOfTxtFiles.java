@@ -5,7 +5,8 @@ import java.io.FilenameFilter;
 
 public class ListOfTxtFiles {
 
-    public static final String DIR_NAME = "/Users/Ramil/IdeaProjects/PracticeJava";
+    public static final String DIR_NAME = "/Users/Administrator/IdeaProjects/PracticeJavaSarbaev";
+    public static final String FILE_NAME = ".txt";
 
     static class extFilter implements FilenameFilter {
         String ext;
@@ -28,13 +29,14 @@ public class ListOfTxtFiles {
             System.exit(1);
         }
 
-        File[] fileNames = file.listFiles(new extFilter(".txt"));
+        File[] fileNames = file.listFiles(new extFilter(FILE_NAME));
 
         System.out.println("Files with .txt extension in " + DIR_NAME + ": ");
 
         if (fileNames != null) {
-            for (File name : fileNames)
+            for (File name : fileNames) {
                 System.out.println(name.getName());
+            }
         }
     }
 }

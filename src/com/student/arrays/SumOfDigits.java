@@ -10,8 +10,9 @@ public class SumOfDigits {
         for (char c : arr) {
             int tmp = Character.digit(c, 10);
 
-            if (tmp == -1)
+            if (tmp == -1) {
                 continue;
+            }
 
             sum += tmp;
         }
@@ -21,12 +22,12 @@ public class SumOfDigits {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        SumOfDigits obj = new SumOfDigits();
 
         System.out.println("Input a digits: ");
 
         char[] array = in.nextLine().trim().toCharArray();
 
+        SumOfDigits obj = new SumOfDigits();
         System.out.println("The sum of digits: " + obj.calculateSum(array));
     }
 }
