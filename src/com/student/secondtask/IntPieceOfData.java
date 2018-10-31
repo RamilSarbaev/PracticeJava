@@ -1,27 +1,22 @@
 package com.student.secondtask;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class IntPieceOfData {
 
     public static final String FILE_NAME = "int_piece_file.txt";
 
     private void getIntPiece(File source) throws IOException {
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(source))) {
-            long off = dis.readLong();
+        try (DataInputStream din = new DataInputStream(new FileInputStream(source))) {
+            Long offset = din.readLong();
+            din.skipBytes(offset.intValue());
 
-            List<Integer> list = new ArrayList<>();
-
-            dis.skipBytes((int) off);
-
-            while (dis.available() > 0) {
-                int num = dis.readInt();
-                list.add(num);
+            while (din.available() > 0) {
+                System.out.print(din.readInt() + " ");
             }
-
-            System.out.println(list);
         }
     }
 
@@ -29,12 +24,13 @@ public class IntPieceOfData {
         File source = new File(FILE_NAME);
 
         IntPieceOfData obj = new IntPieceOfData();
+
+        System.out.println("Int piece of data in File: ");
+
         try {
             obj.getIntPiece(source);
         } catch (IOException ex) {
             System.out.println("Error! " + ex);
         }
-
-
     }
 }
