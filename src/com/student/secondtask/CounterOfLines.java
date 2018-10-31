@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 
 public class CounterOfLines {
 
+    //returns number of lines in file
     public int getCount(String fileName) throws IOException {
         Path path = Paths.get(fileName);
 

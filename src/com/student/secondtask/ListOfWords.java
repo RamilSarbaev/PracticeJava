@@ -9,6 +9,7 @@ public class ListOfWords {
 
     public static final String FILE_NAME = "test.txt";
 
+    //returns String array of all words in file
     public String[] get() throws IOException {
         byte[] bytes = Files.readAllBytes(Paths.get(FILE_NAME));
         String[] words = new String(bytes).split("\\s+");

@@ -7,6 +7,7 @@ public class Copy {
     public static final String SOURCE_NAME = "test1.txt";
     public static final String DESTINATION_NAME = "test2.txt";
 
+    //Copying Source to Dest file
     private void copyFiles(File source, File dest) throws IOException {
         try (InputStream is = new FileInputStream(source);
              OutputStream os = new FileOutputStream(dest)) {

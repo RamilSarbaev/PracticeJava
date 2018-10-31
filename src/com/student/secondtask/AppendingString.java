@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 
 public class AppendingString {
 
+    //write a Text string into position in file with fileName
     public void append(String fileName, String text, String position) throws IOException {
         Path path = Paths.get(fileName);
 

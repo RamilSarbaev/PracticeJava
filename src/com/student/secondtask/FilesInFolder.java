@@ -11,6 +11,7 @@ import java.util.List;
 
 public class FilesInFolder {
 
+    //returns list of String that contains all files in directory
     public List<String> get(String fileName) throws IOException {
         DirectoryStream<Path> directory = Files.newDirectoryStream(Paths.get(fileName));
         List<String> files = new LinkedList<>();

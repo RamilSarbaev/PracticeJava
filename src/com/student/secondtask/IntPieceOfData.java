@@ -9,6 +9,7 @@ public class IntPieceOfData {
 
     public static final String FILE_NAME = "int_piece_file.txt";
 
+    //print int piece of data in source file
     private void getIntPiece(File source) throws IOException {
         try (DataInputStream din = new DataInputStream(new FileInputStream(source))) {
             Long offset = din.readLong();

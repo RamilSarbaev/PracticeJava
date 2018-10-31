@@ -10,6 +10,7 @@ public class ReadAndWrite {
     public static final String FILE_NAME1 = "test1.txt";
     public static final String FILE_NAME2 = "test2.txt";
 
+    //Read text from Source and write him to Dest file with modifying
     private void modifyText(Path source, Path dest) throws IOException {
         byte[] bytes = Files.readAllBytes(source);
 

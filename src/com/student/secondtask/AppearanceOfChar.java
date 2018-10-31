@@ -9,6 +9,7 @@ public class AppearanceOfChar {
 
     public static final String FILE_NAME = "test.txt";
 
+    //returns number of appearances by char C in Source file
     private int computeAppearances(Path source, char c) throws IOException {
         byte[] bytes = Files.readAllBytes(source);
         String text = new String(bytes);

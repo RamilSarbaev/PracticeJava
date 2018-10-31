@@ -12,6 +12,8 @@ public class SplittingTextFile {
     public static final String FILE_DESTINATION1_NAME = "test2.txt";
     public static final String FILE_DESTINATION2_NAME = "test3.txt";
 
+
+    //split Source text file to two different files having 30% and 70% of information
     private void splitTextFile(Path source, Path destFor30, Path destFor70) throws IOException {
         byte[] bytes = Files.readAllBytes(source);
         String text = new String(bytes);
