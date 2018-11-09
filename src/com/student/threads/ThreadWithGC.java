@@ -2,8 +2,10 @@ package com.student.threads;
 
 class SomeThread extends Thread {
 
-    public SomeThread() {
+    SomeThread() {
         System.out.println("Start-up message in SomeThread.");
+
+        start();
     }
 
     @Override
@@ -20,12 +22,16 @@ class SomeThread extends Thread {
     }
 
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         System.out.println("Shut-down message in SomeThread.");
     }
 }
 
 public class ThreadWithGC extends Thread {
+
+    public ThreadWithGC() {
+        start();
+    }
 
     @Override
     public void run() {
@@ -36,10 +42,7 @@ public class ThreadWithGC extends Thread {
     }
 
     public static void main(String[] args) {
-        SomeThread someThread = new SomeThread();
-        ThreadWithGC threadWithGC = new ThreadWithGC();
-
-        someThread.start();
-        threadWithGC.start();
+        new SomeThread();
+        new ThreadWithGC();
     }
 }
